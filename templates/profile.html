@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile</title>
+    </head>
+
+    <body>
+        <div class="user-logged-in auth0 userdetails">
+            <h2 id="img">
+                <img src="//cdn.auth0.com/samples/auth0_logo.png" />
+            </h2>
+            <img class="avatar" src="{{userinfo['picture']}}" />
+            <h3>Welcome {{userinfo['name']}}!</h3>
+            <a class="btn btn-primary btn-lg btn-logout btn-block" href="/userLogout">Logout</a>
+        </div>
+    </body>
+
+</html>

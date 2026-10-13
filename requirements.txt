@@ -1,0 +1,9 @@
+Flask
+Python-dotenv
+Requests
+Flask-oauthlib
+Six
+authlib
+python-oauth2
+auth0-python
+jsonify

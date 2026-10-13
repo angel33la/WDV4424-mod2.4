@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+    </head>
+
+    <body>
+        <main>
+            <div class="user-logged-in auth0 userdetails">
+                <h2 id="img">
+                {% if picture %}
+                <img src="{{ picture }}" alt="Profile picture" width="120" /></h2>
+                {% endif %}
+                Home HTML
+            </div>
+        </main>
+    </body>
+
+</html>
