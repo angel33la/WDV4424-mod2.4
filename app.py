@@ -58,7 +58,7 @@ def login():
     return auth0.authorize_redirect(
         redirect_uri=url_for("callback", _external=True, _scheme="http"))
 
-# Authentication Decorator
+# Authentication
 def requires_auth(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -76,6 +76,24 @@ def dashboard():
         'dashboard.html',
         session=session.get("user"),
         pretty=json.dumps(session.get("user"), indent=4)
+    )
+
+# Protected Settings Route
+@app.route('/settings')
+@requires_auth
+def settings():
+    user_data = session.get('user', {}).get('userinfo', {})
+
+    nickname = user_data.get('nickname')
+    picture = user_data.get('picture')
+
+    # Save the nickname to the session
+    session['nickname'] = nickname
+
+    return render_template(
+        'settings.html',
+        nickname=nickname,
+        picture=picture
     )
 
 # Home / Welcome Route
